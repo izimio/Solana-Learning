@@ -1,0 +1,12 @@
+Sur Solana, les transactions sont atomiques, ce qui signifie que si une transaction échoue, elle n’affectera pas les autres transactions. Cela signifie que les utilisateurs peuvent effectuer plusieurs transactions en même temps sans craindre que l’une d’entre elles ne soit annulée.
+
+Comme dit avant, sur Solana, tout est un compte ! 
+
+Ainsi, une tx va faire référence à: 
+
+- Un compte émetteur
+- Tous les comptes destinataires  (read-only/ read-write)
+- Le contrat intelligent (programme) qui sera exécuté
+- Les données de la transaction (data), structuré en tableau de bytes
+
+le conract à l'adresse: 11111111111111111111111111111111 est le contract system, souvent utilisé pour des opérations de base.

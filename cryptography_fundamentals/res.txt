@@ -1,0 +1,18 @@
+Sur Solana comme sur 99% des Blockchain, un utilisateur possède un Wallet
+
+Ce Wallet est composé de 2 clés :
+
+  * Une clé publique : qui est l’adresse de votre Wallet, c’est cette adresse que vous partagez pour recevoir des fonds
+  * Une clé privée : qui est la clé secrète de votre Wallet, c’est cette clé que vous ne devez jamais partager, c’est elle qui vous permet de signer des transactions
+
+Sur Solana, à la différence d'ETH, la clé publique est aussi l'address, là où sur ETH, l'address est une version hashée de la clé publique. C'est pour cela que vous pouvez voir des adresses Solana de 44 caractères, alors que sur ETH, elles sont de 42 caractères.
+Aussi, la clé privée sur Solana est sous forme d'une suite de nombre dans un tableau, alors que sur ETH, elle est sous forme de string.
+
+e.g:
+[14, 27, 15, 0, 87, ..., 12, 99]
+
+Solana est Blazing fast comparé à l'anémique ETH, et les frais de transaction sont ridiculement bas, ce qui en fait une blockchain très attractive pour les développeurs et les utilisateurs.
+
+Il existe un super SDK et une superbe documentation pour Solana ! 
+
+@solana/web3.js est le SDK JS pour Solana, et il est très bien documenté ! 

@@ -1,0 +1,32 @@
+
+Dans la précédente leçon, on a appelé la fonction 'transfer' du compte 11111....
+Cette fonction est native et permet de transférer des SOL entre deux comptes.
+
+Il est également possible de créer ses propres functions et de les appeler par la suite.
+
+Pour ce faire, il faut:
+
+1. Créer un compte
+2. Lui assigner un programme
+3. Appeler une fonction de ce programme
+
+Pour cela, on va utiliser le type 'TransactionInstructionCtorFields' qui permet de créer une instruction de transaction custom
+
+export type TransactionInstructionCtorFields = {
+  keys: Array<AccountMeta>;
+  programId: PublicKey;
+  data?: Buffer;
+};
+
+ce type prend en paramètres:
+
+- keys: un tableau d'AccountMeta qui contient les comptes à utiliser
+    - pubkey: la clé publique du compte
+    - isSigner: si le compte a signé la transaction
+    - isWritable: si le compte est modifié par la transaction
+- programId: la clé publique du programme à appeler (address publique du compte contenant le code)
+- data: les données à envoyer au programme (optionnel) C'est ici qu'on va mettre le nom de la fonction à appeler, et les paramètres de cette fonction
+
+Pour appeler une fonction, on va donc créer une instruction de transaction avec les bons paramètres, et l'envoyer à la blockchain
+
+

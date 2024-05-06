@@ -1,0 +1,7 @@
+Sur Solana, tout fonctionne sous forme de `comptes`
+
+Un compte est une adresse Solana qui peut contenir diverses informations, comme des tokens, des contrats, des données, etc.
+
+Pour créer un compte, il faut payer une transaction, qui est une opération qui coûte un peu de SOL (la monnaie de Solana).  
+
+Sur Solana et comme sur Ethereum, il y a un devNet et un mainNet.
