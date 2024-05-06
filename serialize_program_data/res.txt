@@ -1,0 +1,28 @@
+une transaction possède une propriété _data_ qui peut être remplie avec des données supplémentaires.
+ces données doivent être sérialisées en buffer ! 
+
+Pour les sérialiser en peut utiliser borsh qui prend en paramètre un schéma et un objet à sérialiser.
+
+e.g
+
+import * as borsh from '@coral-xyz/borsh'
+
+// Define a schema for the data
+const schema = borsh.struct([
+  borsh.u8('variant'),
+  borsh.u16('playerId'),
+  borsh.u256('itemId')
+])
+
+// Create a buffer to hold the encoded data, bigger than necessary
+const buffer = Buffer.alloc(10000)
+
+// Encode the data into the buffer
+const schema.encode({
+  variant: 1,
+  playerId: 2,
+  itemId: new BN(3)
+}, buffer)
+
+// Get the instruction buffer at the right size
+const instructionBuffer = buffer.slice(0, schema.getSpan(buffer))
